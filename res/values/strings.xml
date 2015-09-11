@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">farm</string>
+    <string name="job_seeker">Job Seeker</string>
+    <string name="job_provider">Job Provider</string>
+</resources>
