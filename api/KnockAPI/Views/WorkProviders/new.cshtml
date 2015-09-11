@@ -1,0 +1,41 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<KnockAPI.Models.WorkProvider>
+@{
+    Layout = "Views/Layout/Base.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">New worker</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/workprovider/new" method="post" class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label for="name">Name</label>
+                        <input name="Name" value="@Model.Name" type="text" class="form-control" placeholder="WorkProvider name">
+                    </div>
+                    <div class="col-md-6">
+                        <label  for="workerId">Worker</label>
+                        <select name="workerId" class="form-control">
+                            Workers
+                            @foreach (var item in ViewBag.Workers)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
