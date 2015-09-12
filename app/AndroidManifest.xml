@@ -21,14 +21,14 @@
         </activity>
 
         <activity android:name=".activity.JobProviderActivity"
-                  android:label="Provide Work">
+                  android:label="Look for work">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
 
         <activity android:name=".activity.JobSeekerActivity"
-                  android:label="Look for work">
+                  android:label="Provide work">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>

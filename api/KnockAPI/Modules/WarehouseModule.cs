@@ -13,7 +13,7 @@ namespace KnockAPI.Modules
             Get["/warehouse"] = _ =>
             {
                 var warehouses = ctx.Warehouses.ToList();
-                return View["index", warehouses];
+                return warehouses;
             };
 
             Get["/warehouse/new"] = _ =>

@@ -20,8 +20,14 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="col-md-8">Name</th>
+                        <th class="col-md-8">User Name</th>
+                        <th class="col-md-8">Age</th>
+                        <th class="col-md-8">Sex</th>
+                        <th class="col-md-8">Location</th>
+                        <th class="col-md-8">Contact1</th>
+                        <th class="col-md-8">Contact2</th>
                         <th class="col-md-2">Created at</th>
+                        <th class="col-md-2">Updated at</th>
                         <th class="col-md-2"></th>
                     </tr>
                 </thead>
@@ -29,9 +35,14 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td class="col-md-8">@item.FirstName</td>
-                            <td class="col-md-8">@item.LastName</td>
+                            <td class="col-md-8">@item.FirstName @item.LastName</td>
+                            <td class="col-md-8">@item.Age</td>
+                            <td class="col-md-8">@item.Sex</td>
+                            <td class="col-md-8">@item.LocationKey</td>
+                            <td class="col-md-8">@item.ContactNo1</td>
+                            <td class="col-md-8">@item.ContactNo2</td>
                             <td class="col-md-2">@item.CreatedAt</td>
+                            <td class="col-md-2">@item.ModifiedAt</td>
                             <td class="col-md-2">
                                 <a href="/worker/update/@item.UserId" class="btn btn-xs btn-primary">Edit</a>
                                 <a href="/worker/delete/@item.UserId" data-method="delete" class="btn btn-xs btn-danger">Delete</a>

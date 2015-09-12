@@ -12,7 +12,9 @@ namespace KnockAPI.Modules
         {
             Get["/workproviders"] = _ =>
                 {
-                    return View["index", ctx.WorkProviders.ToList()];
+                    var providers = ctx.WorkProviders.ToList();
+                    //return providers;
+                    return Response.AsJson(providers);
                 };
 
             Get["/workprovider/new"] = _ =>
@@ -39,7 +41,7 @@ namespace KnockAPI.Modules
                     var workprovider = ctx.WorkProviders.Where(x => x.WorkProviderId == id).FirstOrDefault();
                     if (workprovider != null)
                     {
-                        return View["update", new WorkProvider() { WorkProviderId = workprovider.WorkProviderId, Name = workprovider.Name}];
+                        return View["update", new WorkProvider() { WorkProviderId = workprovider.WorkProviderId, Name = workprovider.Name }];
                     }
                     return 404;
                 };

@@ -1,7 +1,7 @@
 package com.land.farm.helper;
 
+import com.land.farm.models.JobProvider;
 import com.land.farm.models.JobSeeker;
-import com.land.farm.models.Location;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -14,12 +14,16 @@ public class ParseJson {
         ArrayList<JobSeeker> jobseekers = new ArrayList<JobSeeker>();
 
         try {
-            JSONObject jsonObject = new JSONObject(jsonString);
-
-            JSONArray jsonArray = jsonObject.getJSONArray("data");
+            JSONArray jsonArray = new JSONArray(jsonString);
             for (int i = 0; i < jsonArray.length(); i++) {
-                JSONArray values = jsonArray.getJSONArray(i);
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
 
+                JobSeeker jobSeeker = new JobSeeker();
+                jobSeeker.name = jsonObject.getString("name");
+                jobSeeker.phone = jsonObject.getString("contactNo1");
+                jobSeeker.age = jsonObject.getString("age");
+
+                jobseekers.add(jobSeeker);
 
             }
 
@@ -32,22 +36,21 @@ public class ParseJson {
     }
 
 
-    public ArrayList<Location> getLocations(String jsonString) {
+    public ArrayList<JobProvider> getWorkersList(String jsonString) {
 
-        ArrayList<Location> locations = new ArrayList<Location>();
+        ArrayList<JobProvider> jobProviders = new ArrayList<JobProvider>();
 
         try {
-            JSONObject jsonObject = new JSONObject(jsonString);
-
-            JSONArray jsonArray = jsonObject.getJSONArray("results");
+            JSONArray jsonArray = new JSONArray(jsonString);
             for (int i = 0; i < jsonArray.length(); i++) {
-                JSONArray values = jsonArray.getJSONArray(i);
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                Location location = new Location();
-                location.id = values.getString(0);
-                location.value = values.getString(1);
+                JobProvider jobProvider = new JobProvider();
+                jobProvider.name = jsonObject.getString("name");
+                jobProvider.phone = jsonObject.getString("contactNo1");
+                jobProvider.age = jsonObject.getString("age");
 
-                locations.add(location);
+                jobProviders.add(jobProvider);
 
             }
 
@@ -56,7 +59,6 @@ public class ParseJson {
 
         }
 
-        return locations;
-
+        return jobProviders;
     }
 }

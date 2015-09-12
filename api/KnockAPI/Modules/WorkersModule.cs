@@ -13,8 +13,11 @@ namespace KnockAPI.Modules
             Get["/workers"] = _ =>
                 {
                     var workers = ctx.Workers.ToList();
-                    return Response.AsJson(workers);
-                    //return View["index", workers];
+                   //return workers;
+                   return Response.AsJson(workers);
+
+
+                     
                 };
 
             Get["/worker/new"] = _ =>
@@ -32,16 +35,16 @@ namespace KnockAPI.Modules
                         ctx.SaveChanges();
                         return Response.AsRedirect("/workers");
                     }
-                    return 500;                   
+                    return 500;
                 };
 
             Get["/worker/update/{id}"] = _ =>
                 {
                     var id = (long)_.id;
                     var worker = ctx.Workers.Where(x => x.WorkerId == id).FirstOrDefault();
-                    if(worker != null)
+                    if (worker != null)
                     {
-                        return View["update", new Worker() { Name = worker.Name, WorkerId = worker.WorkerId}];
+                        return View["update", new Worker() { Name = worker.Name, WorkerId = worker.WorkerId }];
                     }
                     return 404;
                 };
@@ -49,7 +52,7 @@ namespace KnockAPI.Modules
             Post["/worker/update"] = parameters =>
                 {
                     Worker worker = this.Bind<Worker>();
-                    if(worker != null)
+                    if (worker != null)
                     {
                         ctx.SetModified(worker);
                         ctx.SaveChanges();

@@ -52,11 +52,15 @@ public class JobProviderActivity extends Activity {
         _jobProviderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                TextView contactView = (TextView) view.findViewById(R.id.linkView);
+                try {
+                    TextView contactView = (TextView) view.findViewById(R.id.linkView);
 
-                Intent phoneIntent = new Intent(Intent.ACTION_CALL);
-                phoneIntent.setData(Uri.parse("tel:" + contactView.getText()));
-                startActivity(phoneIntent);
+                    Intent phoneIntent = new Intent(Intent.ACTION_CALL);
+                    phoneIntent.setData(Uri.parse("tel:" + contactView.getText()));
+                    startActivity(phoneIntent);
+                } catch (Exception ex) {
+                    Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_LONG).show();
+                }
             }
 
         });

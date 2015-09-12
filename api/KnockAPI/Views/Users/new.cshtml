@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center">New Users</h2>
+            <h2 class="text-center">New User</h2>
         </div>
     </div>
     <div class="row">
@@ -22,7 +22,7 @@
                         <input name="LastName" value="@Model.LastName" type="text" class="form-control" placeholder="User Last Name">
 
                         <label for="Age">Age</label>
-                        <input  name="Age" value="@Model.Age" type="text" class="form-control" placeholder="Age">
+                        <input name="Age" value="@Model.Age" type="number" class="form-control" placeholder="Age">
 
                         <label for="Sex">Sex</label>
                         <input name="Sex" value="@Model.Sex" type="text" class="form-control" placeholder="Sex">
@@ -33,12 +33,18 @@
                         <label for="Location">Location</label>
                         <input name="Location" value="@Model.LocationKey" type="text" class="form-control" placeholder="Location">
 
+                        <label for="Contact1">Contact1</label>
+                        <input name="Contact1" value="@Model.ContactNo1" type="text" class="form-control" placeholder="Contact1">
+
+                        <label for="Contact2">Contact2</label>
+                        <input name="Contact2" value="@Model.ContactNo2" type="text" class="form-control" placeholder="Contact2">
+
+                        
                         <label for="Password">Password</label>
-                        <input name="Password" value="@Model.Password" type="text" class="form-control" placeholder="Password">
-
-
+                        <input name="Password" value="@Model.Password" type="password" class="form-control" placeholder="Password">
+                        
                         <label for="Password">Confirm Password</label>
-                        <input name="Confirm Password"   type="text" class="form-control" placeholder="Password">
+                        <input name="ConfirmPassword" type="password"  class="form-control" placeholder="Password">
 
 
                     </div>

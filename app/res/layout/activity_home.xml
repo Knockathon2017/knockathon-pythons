@@ -28,7 +28,7 @@
 
     <ListView android:id="@+id/tickerListView"
               android:layout_width="match_parent"
-              android:layout_height="300dp"
+              android:layout_height="620dp"
               android:layout_marginTop="15dp"
               android:layout_marginLeft="20dp"
               android:layout_marginRight="20dp"
@@ -45,8 +45,8 @@
             android:layout_marginTop="30dp">
 
         <Button android:id="@+id/jobSearchBtn"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_width="130dp"
+                android:layout_height="80dp"
                 android:background="#FF6766"
                 android:layout_alignParentLeft="true"
                 android:drawableLeft="@drawable/users"
@@ -54,17 +54,37 @@
                 android:textColor="@android:color/white"
                 android:onClick="navigateToJobProviders"/>
 
+        <Button
+                android:id="@+id/wareHouseBtn"
+                android:layout_width="130dp"
+                android:layout_height="80dp"
+                android:background="#FF6766"
+                android:layout_centerInParent="true"
+                android:text="Share Warehouse Space"
+                android:onClick="navigateToWarehouseStorage"
+                android:textColor="@android:color/white"/>
+
 
         <Button
                 android:id="@+id/jobProvideBtn"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_width="130dp"
+                android:layout_height="80dp"
                 android:background="#FF6766"
                 android:layout_alignParentRight="true"
                 android:text="@string/job_provider"
                 android:drawableLeft="@drawable/provider"
                 android:textColor="@android:color/white"
                 android:onClick="navigateToJobSeekers"/>
+
+        <!--<ListView android:id="@+id/weatherListView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="300dp"-->
+        <!--android:layout_marginTop="15dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:divider="#b5b5b5"-->
+        <!--android:dividerHeight="1dp">-->
+        <!--</ListView>-->
 
 
     </RelativeLayout>

@@ -1,0 +1,61 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<KnockAPI.Models.Warehouse>>
+@{
+    Layout = "Views/Layout/Base.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Warehouses</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/worker/new" class="btn btn-default">New</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-8">Owner Name</th>
+                        <th class="col-md-8">Location</th>
+                        <th class="col-md-8">Owner Contact1</th>
+                        <th class="col-md-8">Owner Contact2</th>
+                        <th class="col-md-8">Total Capacity</th>
+                        <th class="col-md-8">Booked</th>
+                        <th class="col-md-8">Remaining</th>
+                        <th class="col-md-2">Updated at</th>
+                        <th class="col-md-2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="col-md-8">@item.FirstName @item.LastName</td>
+                            <td class="col-md-8">@item.LocationKey</td>
+                            <td class="col-md-8">@item.ContactNo1</td>
+                            <td class="col-md-8">@item.ContactNo2</td>
+                            <td class="col-md-8">@item.Capacity</td>
+                            <td class="col-md-8">@item.Occupied</td>
+                            <td class="col-md-8">@item.Free</td>
+                            <td class="col-md-2">@item.CreatedAt</td>
+                            <td class="col-md-8">
+                                <a href="/worker/update/@item.WarehouseId" class="btn btn-xs btn-primary">Edit</a>
+                                <a href="/worker/delete/@item.WarehouseId" data-method="delete" class="btn btn-xs btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <a href="/" class="btn btn-default">Back</a>
+        </div>
+    </div>
+</div>

@@ -117,11 +117,11 @@
     <Content Include="packages.config" />
     <Content Include="Views\index.cshtml" />
     <Content Include="Views\Layout\Base.cshtml" />
-    <Content Include="Views\Workers\index.cshtml" />
+    <Content Include="Views\Workers\List`1.cshtml" />
     <Content Include="Views\Workers\new.cshtml" />
     <Content Include="Views\Workers\update.cshtml" />
     <Content Include="Views\Workers\delete.cshtml" />
-    <Content Include="Views\WorkProviders\index.cshtml" />
+    <Content Include="Views\WorkProviders\List`1.cshtml" />
     <Content Include="Views\WorkProviders\new.cshtml" />
     <Content Include="Views\WorkProviders\update.cshtml" />
     <Content Include="Views\WorkProviders\delete.cshtml" />
@@ -134,7 +134,7 @@
     <Content Include="Views\WorkType\index.cshtml" />
     <Content Include="Views\WorkType\new.cshtml" />
     <Content Include="Views\WorkType\update.cshtml" />
-    <Content Include="Views\Warehouse\index.cshtml" />
+    <Content Include="Views\Warehouse\List`1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

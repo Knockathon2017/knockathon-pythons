@@ -33,11 +33,11 @@ public class JobSeekerAdapter extends ArrayAdapter<JobProvider> {
         if (_jobProvider.get(position) != null) {
             TextView workProviderNameView = (TextView) rowView.findViewById(R.id.workProviderView);
             TextView workProviderContact = (TextView) rowView.findViewById(R.id.contactView);
-            //TextView workProviderLocation = (TextView)rowView.findViewById(R.id)
+            TextView ageView = (TextView) rowView.findViewById(R.id.ageView);
 
             workProviderNameView.setText(_jobProvider.get(position).name);
             workProviderContact.setText(_jobProvider.get(position).phone);
-
+            ageView.setText(_jobProvider.get(position).age);
 
         }
 
