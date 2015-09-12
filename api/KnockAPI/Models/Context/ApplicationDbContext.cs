@@ -15,6 +15,7 @@ namespace KnockAPI.Models.Context
         public IDbSet<Worker> Workers { get; set; }
         public IDbSet<User> Users { get; set; }
         public IDbSet<WorkType> WorkType { get; set; }
+        public IDbSet<Warehouse> Warehouses { get; set; }
         public void SetModified(object entity)
         {
             Entry(entity).State = EntityState.Modified;
@@ -28,6 +29,7 @@ namespace KnockAPI.Models.Context
             modelBuilder.Configurations.Add(new WorkerMapping());
             modelBuilder.Configurations.Add(new UserMapping());
             modelBuilder.Configurations.Add(new WorkTypeMapping());
+            modelBuilder.Configurations.Add(new WarehouseMapping());
         }
 
         public override int SaveChanges()

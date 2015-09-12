@@ -8,6 +8,7 @@ namespace KnockAPI.Models.Context
         IDbSet<Worker> Workers { get; set; }
         IDbSet<User> Users { get; set; }
         IDbSet<WorkType> WorkType { get; set; }
+        IDbSet<Warehouse> Warehouses { get; set; }
         int SaveChanges();
 
         void SetModified(object entity);

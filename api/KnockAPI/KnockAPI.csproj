@@ -94,8 +94,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Base.cs" />
     <Compile Include="Models\Mapping\UserMapping.cs" />
+    <Compile Include="Models\Mapping\WarehouseMapping.cs" />
     <Compile Include="Models\Mapping\WorkTypeMapping.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Warehouse.cs" />
     <Compile Include="Models\WorkType.cs" />
     <Compile Include="Models\Worker.cs" />
     <Compile Include="Models\Context\ApplicationDbContext.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="Models\WorkProvider.cs" />
     <Compile Include="Modules\LocationModule.cs" />
     <Compile Include="Modules\UserModule.cs" />
+    <Compile Include="Modules\WarehouseModule.cs" />
     <Compile Include="Modules\WorkTypeModule.cs" />
     <Compile Include="Modules\WorkersModule.cs" />
     <Compile Include="Modules\WorkProviderModule.cs" />
@@ -131,6 +134,7 @@
     <Content Include="Views\WorkType\index.cshtml" />
     <Content Include="Views\WorkType\new.cshtml" />
     <Content Include="Views\WorkType\update.cshtml" />
+    <Content Include="Views\Warehouse\index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
