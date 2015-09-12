@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/jobProviderLoaderView"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading...."
+            android:textColor="@android:color/black"
+            android:textSize="20dp"/>
+
+    <ListView android:id="@+id/jobProviderListView"
+              android:layout_width="match_parent"
+              android:layout_height="400dp"
+              android:layout_marginTop="15dp"
+              android:layout_marginLeft="20dp"
+              android:layout_marginRight="20dp"
+              android:divider="#b5b5b5"
+              android:dividerHeight="1dp">
+    </ListView>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/mic"
+                android:onClick="promptSpeechInput"
+                android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
