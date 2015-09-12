@@ -3,6 +3,7 @@ package com.land.farm.activity;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
@@ -51,10 +52,11 @@ public class JobProviderActivity extends Activity {
         _jobProviderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//                TextView linkView = (TextView) view.findViewById(R.id.linkView);
-//
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(linkView.getText().toString()));
-//                startActivity(intent);
+                TextView contactView = (TextView) view.findViewById(R.id.linkView);
+
+                Intent phoneIntent = new Intent(Intent.ACTION_CALL);
+                phoneIntent.setData(Uri.parse("tel:" + contactView.getText()));
+                startActivity(phoneIntent);
             }
 
         });
