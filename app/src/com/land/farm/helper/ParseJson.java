@@ -22,6 +22,9 @@ public class ParseJson {
                 jobSeeker.name = jsonObject.getString("name");
                 jobSeeker.phone = jsonObject.getString("contactNo1");
                 jobSeeker.age = jsonObject.getString("age");
+                jobSeeker.workForce = jsonObject.getString("requiredWorkforce");
+                jobSeeker.sex = jsonObject.getString("sex");
+                //jobSeeker.isAvailable = jsonObject.getString("isAvailable");
 
                 jobseekers.add(jobSeeker);
 
@@ -49,6 +52,8 @@ public class ParseJson {
                 jobProvider.name = jsonObject.getString("name");
                 jobProvider.phone = jsonObject.getString("contactNo1");
                 jobProvider.age = jsonObject.getString("age");
+                jobProvider.sex = jsonObject.getString("sex");
+                jobProvider.isAvailable = jsonObject.getString("isAvailable");
 
                 jobProviders.add(jobProvider);
 

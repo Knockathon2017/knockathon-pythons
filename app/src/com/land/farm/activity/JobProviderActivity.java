@@ -53,7 +53,7 @@ public class JobProviderActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 try {
-                    TextView contactView = (TextView) view.findViewById(R.id.linkView);
+                    TextView contactView = (TextView) view.findViewById(R.id.contactView);
 
                     Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                     phoneIntent.setData(Uri.parse("tel:" + contactView.getText()));

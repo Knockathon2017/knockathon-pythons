@@ -10,4 +10,6 @@ public class JobProvider {
     public String phone;
     public String Status;
     public String workForce;
+    public String sex;
+    public String isAvailable;
 }

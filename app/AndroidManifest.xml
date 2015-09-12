@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application android:label="@string/app_name" android:icon="@drawable/logo"
                  android:theme="@style/TopActionBarTheme">
@@ -29,6 +29,13 @@
 
         <activity android:name=".activity.JobSeekerActivity"
                   android:label="Provide work">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.WarehouseActivity"
+                  android:label="Warehouse Storage Location">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>

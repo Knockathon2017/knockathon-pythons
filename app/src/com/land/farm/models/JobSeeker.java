@@ -9,4 +9,6 @@ public class JobSeeker {
     public String phone;
     public String status;
     public String workForce;
+    public String sex;
+    public String isAvailable;
 }

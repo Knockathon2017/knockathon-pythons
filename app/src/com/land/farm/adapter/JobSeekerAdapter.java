@@ -35,9 +35,13 @@ public class JobSeekerAdapter extends ArrayAdapter<JobProvider> {
             TextView workProviderContact = (TextView) rowView.findViewById(R.id.contactView);
             TextView ageView = (TextView) rowView.findViewById(R.id.ageView);
 
-            workProviderNameView.setText(_jobProvider.get(position).name);
+            String online = "No";
+
+            if (_jobProvider.get(position).isAvailable == "true") {
+                online = "Yes";
+            }
+            workProviderNameView.setText(_jobProvider.get(position).name + " , Age " + _jobProvider.get(position).age + " , Sex " + _jobProvider.get(position).sex + " , Is Available : " + online);
             workProviderContact.setText(_jobProvider.get(position).phone);
-            ageView.setText(_jobProvider.get(position).age);
 
         }
 
