@@ -79,6 +79,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\APIKnock.mdf" />
+    <Content Include="App_Data\APIKnock_log.ldf">
+      <DependentUpon>APIKnock.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\css\bootstrap\bootstrap.min.css" />
     <Content Include="Content\js\boostrap\bootstrap.min.js" />
     <Content Include="Content\js\jquery\jquery-1.11.3.min.js" />
@@ -135,7 +139,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\img\" />
   </ItemGroup>
   <PropertyGroup>
