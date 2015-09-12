@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class HomeActivity extends Activity {
 
     private ListView _tickerListView;
+    private TextView _loaderView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.activity_home);
 
         _tickerListView = (ListView) this.findViewById(R.id.tickerListView);
+        _loaderView = (TextView) this.findViewById(R.id.homeLoaderView);
 
         RemoteXml remoteXml = new RemoteXml(this.getApplicationContext());
         remoteXml.GetXmlData(new XmlCallback() {
@@ -35,6 +37,10 @@ public class HomeActivity extends Activity {
             public void onSuccess(ArrayList<Announcement> result) {
                 TickerAdapter tickerAdapter = new TickerAdapter(HomeActivity.this, R.id.tickerListView, result);
                 _tickerListView.setAdapter(tickerAdapter);
+
+                _loaderView.setVisibility(View.INVISIBLE);
+                _loaderView.setHeight(0);
+                _loaderView.setWidth(0);
             }
 
         }, UrlConstants.TICKERS);
@@ -50,6 +56,19 @@ public class HomeActivity extends Activity {
 
         });
 
-
     }
+
+    // those who can provide work
+    public void navigateToJobSeekers(View view) {
+        Intent intent = new Intent(HomeActivity.this, JobSeekerActivity.class);
+        startActivity(intent);
+    }
+
+
+    // those who want job
+    public void navigateToJobProviders(View view) {
+        Intent intent = new Intent(HomeActivity.this, JobProviderActivity.class);
+        startActivity(intent);
+    }
+
 }

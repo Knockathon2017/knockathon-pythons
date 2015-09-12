@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView android:id="@+id/workProviderNameView"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textColor="@android:color/black"
+                          android:textSize="14dp"
+                          android:text="work provider"/>
+
+                <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="clip_vertical"
+                        android:src="@drawable/phone" android:id="@+id/imageView"/>
+
+                <TextView android:id="@+id/workProviderLocationView"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="location"
+                          android:textColor="@android:color/darker_gray"
+                          android:textSize="12dp" android:layout_below="@+id/imageView"
+                          android:layout_alignParentStart="true"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

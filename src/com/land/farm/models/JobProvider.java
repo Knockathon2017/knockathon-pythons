@@ -1,10 +1,11 @@
 package com.land.farm.models;
 
 
-public class JobSeeker {
+public class JobProvider {
 
-    public String workProvider;
+    public String name;
     public String age;
     public String location;
     public String phone;
+    public String Status;
 }

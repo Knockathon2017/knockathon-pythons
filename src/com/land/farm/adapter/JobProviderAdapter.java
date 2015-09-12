@@ -1,5 +1,6 @@
 package com.land.farm.adapter;
 
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,12 +12,12 @@ import com.land.farm.models.JobSeeker;
 
 import java.util.ArrayList;
 
-public class JobSeekerAdapter extends ArrayAdapter<JobSeeker> {
+public class JobProviderAdapter extends ArrayAdapter<JobSeeker> {
 
     private Activity _myContext;
     private ArrayList<JobSeeker> _jobSeekers;
 
-    public JobSeekerAdapter(Context context, int resourceId, ArrayList<JobSeeker> jobseekers) {
+    public JobProviderAdapter(Context context, int resourceId, ArrayList<JobSeeker> jobseekers) {
         super(context, resourceId, jobseekers);
 
         _myContext = (Activity) context;
@@ -27,7 +28,7 @@ public class JobSeekerAdapter extends ArrayAdapter<JobSeeker> {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = _myContext.getLayoutInflater();
-        View rowView = inflater.inflate(R.layout.adapter_jobprovider, null);
+        View rowView = inflater.inflate(R.layout.adapter_jobseeker, null);
 
         if (_jobSeekers.get(position) != null) {
 
@@ -35,5 +36,4 @@ public class JobSeekerAdapter extends ArrayAdapter<JobSeeker> {
 
         return rowView;
     }
-
 }

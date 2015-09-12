@@ -3,8 +3,8 @@
               android:focusableInTouchMode="true"
               android:orientation="vertical"
               android:background="@android:color/white"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
 
     <TextView
             android:layout_marginLeft="16dp"
@@ -16,9 +16,19 @@
             android:textColor="@android:color/black"
             android:textSize="20dp"/>
 
+    <TextView
+            android:id="@+id/homeLoaderView"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading...."
+            android:textColor="@android:color/black"
+            android:textSize="20dp"/>
+
     <ListView android:id="@+id/tickerListView"
               android:layout_width="match_parent"
-              android:layout_height="250dp"
+              android:layout_height="300dp"
               android:layout_marginTop="15dp"
               android:layout_marginLeft="20dp"
               android:layout_marginRight="20dp"
@@ -42,7 +52,9 @@
                 android:layout_alignParentLeft="true"
                 android:drawableLeft="@drawable/users"
                 android:text="@string/job_seeker"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:onClick="navigateToJobProviders"/>
+
 
         <Button
                 android:id="@+id/jobProvideBtn"
@@ -52,10 +64,11 @@
                 android:layout_alignParentRight="true"
                 android:text="@string/job_provider"
                 android:drawableLeft="@drawable/provider"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:onClick="navigateToJobSeekers"/>
+
 
     </RelativeLayout>
-
 
 </LinearLayout>
 
