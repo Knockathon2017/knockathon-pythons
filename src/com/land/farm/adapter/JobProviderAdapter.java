@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import com.land.farm.R;
 import com.land.farm.models.JobSeeker;
 
@@ -31,6 +32,12 @@ public class JobProviderAdapter extends ArrayAdapter<JobSeeker> {
         View rowView = inflater.inflate(R.layout.adapter_jobseeker, null);
 
         if (_jobSeekers.get(position) != null) {
+            TextView workProviderNameView = (TextView) rowView.findViewById(R.id.workProviderNameView);
+            TextView workProviderLocationView = (TextView) rowView.findViewById(R.id.workProviderLocationView);
+
+            workProviderNameView.setText(_jobSeekers.get(position).name);
+            workProviderLocationView.setText(_jobSeekers.get(position).location);
+
 
         }
 

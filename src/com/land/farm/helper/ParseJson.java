@@ -1,7 +1,7 @@
 package com.land.farm.helper;
 
+import com.land.farm.models.JobProvider;
 import com.land.farm.models.JobSeeker;
-import com.land.farm.models.Location;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -14,13 +14,18 @@ public class ParseJson {
         ArrayList<JobSeeker> jobseekers = new ArrayList<JobSeeker>();
 
         try {
-            JSONObject jsonObject = new JSONObject(jsonString);
+            JSONArray jsonArray = new JSONArray(jsonString);
 
-            JSONArray jsonArray = jsonObject.getJSONArray("data");
             for (int i = 0; i < jsonArray.length(); i++) {
-                JSONArray values = jsonArray.getJSONArray(i);
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
 
+                JobSeeker jobSeeker = new JobSeeker();
+                jobSeeker.age = jsonObject.getString("age");
+                jobSeeker.name = jsonObject.getString("name");
+                jobSeeker.workForce = jsonObject.getString("requiredWorkforce");
+                jobSeeker.phone = jsonObject.getString("contactNo1");
 
+                jobseekers.add(jobSeeker);
             }
 
         } catch (Exception exception) {
@@ -32,22 +37,23 @@ public class ParseJson {
     }
 
 
-    public ArrayList<Location> getLocations(String jsonString) {
+    public ArrayList<JobProvider> getWorkersList(String jsonString) {
 
-        ArrayList<Location> locations = new ArrayList<Location>();
+        ArrayList<JobProvider> jobProviders = new ArrayList<JobProvider>();
 
         try {
-            JSONObject jsonObject = new JSONObject(jsonString);
+            JSONArray jsonArray = new JSONArray(jsonString);
 
-            JSONArray jsonArray = jsonObject.getJSONArray("results");
             for (int i = 0; i < jsonArray.length(); i++) {
-                JSONArray values = jsonArray.getJSONArray(i);
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                Location location = new Location();
-                location.id = values.getString(0);
-                location.value = values.getString(1);
+                JobProvider jobProvider = new JobProvider();
+                jobProvider.name = jsonObject.getString("name");
+                jobProvider.age = jsonObject.get("age").toString();
+                jobProvider.gender = jsonObject.getString("sex");
+                jobProvider.phone = jsonObject.getString("contactNo1");
 
-                locations.add(location);
+                jobProviders.add(jobProvider);
 
             }
 
@@ -56,7 +62,37 @@ public class ParseJson {
 
         }
 
-        return locations;
+        return jobProviders;
+
+    }
+
+
+    public ArrayList<JobSeeker> getWorkOpportunityList(String jsonString) {
+
+        ArrayList<JobSeeker> jobSeekers = new ArrayList<JobSeeker>();
+
+        try {
+            JSONArray jsonArray = new JSONArray(jsonString);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                JobSeeker jobSeeker = new JobSeeker();
+                jobSeeker.age = jsonObject.getString("Age");
+                jobSeeker.name = jsonObject.getString("Name");
+                jobSeeker.status = jsonObject.getString("IsAvailable");
+                jobSeeker.phone = jsonObject.getString("ContactNo1");
+
+                jobSeekers.add(jobSeeker);
+
+            }
+
+        } catch (Exception exception) {
+            //Todo : Handle exception
+
+        }
+
+        return jobSeekers;
 
     }
 }

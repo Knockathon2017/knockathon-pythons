@@ -16,7 +16,7 @@ import com.land.farm.R;
 import com.land.farm.adapter.JobSeekerAdapter;
 import com.land.farm.helper.RemoteJson;
 import com.land.farm.interfaces.JsonCallback;
-import com.land.farm.models.JobSeeker;
+import com.land.farm.models.JobProvider;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -39,7 +39,7 @@ public class JobSeekerActivity extends Activity {
         remoteJson.SendRequest(new JsonCallback() {
 
             @Override
-            public void onSuccess(ArrayList<JobSeeker> result) {
+            public void onSuccess(ArrayList<JobProvider> result) {
                 JobSeekerAdapter jobSeekerAdapter = new JobSeekerAdapter(JobSeekerActivity.this, R.id.jobSeekerListView, result);
                 _jobSeekerListView.setAdapter(jobSeekerAdapter);
 
@@ -47,7 +47,7 @@ public class JobSeekerActivity extends Activity {
                 _jobSeekerLoaderView.setHeight(0);
                 _jobSeekerLoaderView.setVisibility(View.INVISIBLE);
             }
-        }, UrlConstants.TICKERS);
+        }, UrlConstants.WORKERS);
 
         _jobSeekerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -87,7 +87,6 @@ public class JobSeekerActivity extends Activity {
                 if (resultCode == RESULT_OK && null != data) {
 
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-
                     //result.get(0));
                 }
                 break;

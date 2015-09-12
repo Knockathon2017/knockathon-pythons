@@ -15,7 +15,7 @@ import com.land.farm.Constants.UrlConstants;
 import com.land.farm.R;
 import com.land.farm.adapter.JobProviderAdapter;
 import com.land.farm.helper.RemoteJson;
-import com.land.farm.interfaces.JsonCallback;
+import com.land.farm.interfaces.WorkProviderCallBack;
 import com.land.farm.models.JobSeeker;
 
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public class JobProviderActivity extends Activity {
         _jobProviderLoaderView = (TextView) this.findViewById(R.id.jobProviderLoaderView);
 
         RemoteJson remoteJson = new RemoteJson(this.getApplicationContext());
-        remoteJson.SendRequest(new JsonCallback() {
+        remoteJson.SendRequestWorkers(new WorkProviderCallBack() {
 
             @Override
             public void onSuccess(ArrayList<JobSeeker> result) {
@@ -47,7 +47,7 @@ public class JobProviderActivity extends Activity {
                 _jobProviderLoaderView.setHeight(0);
                 _jobProviderLoaderView.setVisibility(View.INVISIBLE);
             }
-        }, UrlConstants.TICKERS);
+        }, UrlConstants.WORKPROVIDERS);
 
         _jobProviderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

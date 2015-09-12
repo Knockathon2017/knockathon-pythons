@@ -33,7 +33,6 @@
               android:layout_marginLeft="20dp"
               android:layout_marginRight="20dp"
               android:divider="#b5b5b5"
-              android:background="@drawable/bordershadow"
               android:dividerHeight="1dp">
     </ListView>
 

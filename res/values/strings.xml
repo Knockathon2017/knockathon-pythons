@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">farm</string>
+    <string name="app_name">Krishi Mitar</string>
     <string name="job_seeker">Look for work</string>
     <string name="job_provider">Provide work</string>
     <string name="speechPrompt">Search</string>

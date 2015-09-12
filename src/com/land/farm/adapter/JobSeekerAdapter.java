@@ -6,21 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import com.land.farm.R;
-import com.land.farm.models.JobSeeker;
+import com.land.farm.models.JobProvider;
 
 import java.util.ArrayList;
 
-public class JobSeekerAdapter extends ArrayAdapter<JobSeeker> {
+public class JobSeekerAdapter extends ArrayAdapter<JobProvider> {
 
     private Activity _myContext;
-    private ArrayList<JobSeeker> _jobSeekers;
+    private ArrayList<JobProvider> _jobProvider;
 
-    public JobSeekerAdapter(Context context, int resourceId, ArrayList<JobSeeker> jobseekers) {
+    public JobSeekerAdapter(Context context, int resourceId, ArrayList<JobProvider> jobseekers) {
         super(context, resourceId, jobseekers);
 
         _myContext = (Activity) context;
-        _jobSeekers = jobseekers;
+        _jobProvider = jobseekers;
 
     }
 
@@ -29,7 +30,14 @@ public class JobSeekerAdapter extends ArrayAdapter<JobSeeker> {
         LayoutInflater inflater = _myContext.getLayoutInflater();
         View rowView = inflater.inflate(R.layout.adapter_jobprovider, null);
 
-        if (_jobSeekers.get(position) != null) {
+        if (_jobProvider.get(position) != null) {
+            TextView workProviderNameView = (TextView) rowView.findViewById(R.id.workProviderView);
+            TextView workProviderContact = (TextView) rowView.findViewById(R.id.contactView);
+            //TextView workProviderLocation = (TextView)rowView.findViewById(R.id)
+
+            workProviderNameView.setText(_jobProvider.get(position).name);
+            workProviderContact.setText(_jobProvider.get(position).phone);
+
 
         }
 
