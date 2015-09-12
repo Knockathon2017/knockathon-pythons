@@ -33,7 +33,7 @@ namespace KnockAPI.Modules
                     return 500;
                 };
 
-            Get["/workprovider/update/{id:long}"] = _ =>
+            Get["/workprovider/update/{id}"] = _ =>
                 {
                     var id = (long)_.id;
                     var workprovider = ctx.WorkProviders.Where(x => x.Id == id).FirstOrDefault();
@@ -57,7 +57,7 @@ namespace KnockAPI.Modules
                 };
 
 
-            Get["/workprovider/delete/{id:long}"] = _ =>
+            Get["/workprovider/delete/{id}"] = _ =>
             {
                 var id = (long)_.id;
                 if (ctx.WorkProviders.Any(x => x.Id == id))

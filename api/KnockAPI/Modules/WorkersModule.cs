@@ -34,7 +34,7 @@ namespace KnockAPI.Modules
                     return 500;                   
                 };
 
-            Get["/worker/update/{id:long}"] = _ =>
+            Get["/worker/update/{id}"] = _ =>
                 {
                     var id = (long)_.id;
                     var worker = ctx.Workers.Where(x => x.Id == id).FirstOrDefault();
@@ -56,7 +56,7 @@ namespace KnockAPI.Modules
                     }
                     return 404;
                 };
-            Get["/worker/delete/{id:long}"] = _ =>
+            Get["/worker/delete/{id}"] = _ =>
                 {
                     var id = (long)_.id;
                     if (ctx.Workers.Any(x => x.Id == id))

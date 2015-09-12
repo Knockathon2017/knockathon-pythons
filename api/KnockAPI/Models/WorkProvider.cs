@@ -1,11 +1,11 @@
 ﻿
 namespace KnockAPI.Models
 {
-    public class WorkProvider : Base
+    public class WorkProvider : User
     {
         public long Id { get; set; }
-        public string Name { get; set; }
-        public WorkProvider()
-        { }
+        public long UserId { get; set; }
+        public int RequiredWorkforce { get; set; }
+        
     }
 }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Web;
 
 namespace KnockAPI.Models.Mapping
 {
@@ -17,10 +13,11 @@ namespace KnockAPI.Models.Mapping
                 .Property(x => x.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(x => x.Name)
-                .HasColumnType("varchar")
-                .IsRequired()
-                .HasMaxLength(100);
+            Property(x => x.IsAvailable)
+                .HasColumnType("bit");
+
+            Property(x => x.UserId)
+                .IsRequired();
 
             Property(x => x.CreatedAt)
                 .IsRequired();

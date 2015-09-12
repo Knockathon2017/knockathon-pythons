@@ -1,4 +1,4 @@
-﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<KnockAPI.Models.Worker>>
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<KnockAPI.Models.WorkType >>
 @{
     Layout = "Views/Layout/Base.cshtml";
 }
@@ -7,12 +7,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center">Workers</h2>
+            <h2 class="text-center">WorkTypes</h2>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <a href="/worker/new" class="btn btn-default">New</a>
+            <a href="/user/new" class="btn btn-default">New</a>
         </div>
     </div>
     <div class="row">
@@ -20,21 +20,21 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="col-md-8">Name</th>
-                        <th class="col-md-2">Created at</th>
-                        <th class="col-md-2"></th>
+                        <th class="col-md-8">WorkNature</th>
+                        <th class="col-md-2">Category</th>
+                        <th class="col-md-2">CreatedAt</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td class="col-md-8">@item.FirstName</td>
-                            <td class="col-md-8">@item.LastName</td>
+                            <td class="col-md-8">@item.WorkNature</td>
+                            <td class="col-md-8">@item.Category </td>
                             <td class="col-md-2">@item.CreatedAt</td>
                             <td class="col-md-2">
-                                <a href="/worker/update/@item.Id" class="btn btn-xs btn-primary">Edit</a>
-                                <a href="/worker/delete/@item.Id" data-method="delete" class="btn btn-xs btn-danger">Delete</a>
+                                <a href="/worktype/update/@item.Id" class="btn btn-xs btn-primary">Edit</a>
+                                <a href="/worktype/delete/@item.Id" data-method="delete" class="btn btn-xs btn-danger">Delete</a>
                             </td>
                         </tr>
                     }

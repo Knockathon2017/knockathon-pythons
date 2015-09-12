@@ -23,10 +23,10 @@
                     <div class="col-md-6">
                         <label for="workerId">Worker</label>
                         <select name="workerId" class="form-control">
-                            Workers
-                            @foreach (var item in ViewBag.Workers)
+                            Nature of Work
+                            @foreach (var item in ViewBag.WorkType)
                             {
-                                <option @(item.Id == Model.WorkerId ? "selected" : "") value="@item.Id">@item.Name</option>
+                                <option @(item.Id == Model.WorkTypeId ? "selected" : "") value="@item.Id">@item.WorkNature</option>
                             }
                         </select>
                     </div>

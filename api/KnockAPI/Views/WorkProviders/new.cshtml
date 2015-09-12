@@ -19,12 +19,12 @@
                         <input name="Name" value="@Model.Name" type="text" class="form-control" placeholder="WorkProvider name">
                     </div>
                     <div class="col-md-6">
-                        <label  for="workerId">Worker</label>
+                        <label  for="workerId">Nature of Work</label>
                         <select name="workerId" class="form-control">
                             Workers
-                            @foreach (var item in ViewBag.Workers)
+                            @foreach (var item in ViewBag.WorkType)
                             {
-                                <option value="@item.Id">@item.Name</option>
+                                <option value="@item.Id">@item.WorkNature</option>
                             }
                         </select>
                     </div>

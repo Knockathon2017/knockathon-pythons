@@ -1,4 +1,4 @@
-﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<KnockAPI.Models.Worker>>
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<KnockAPI.Models.User>>
 @{
     Layout = "Views/Layout/Base.cshtml";
 }
@@ -7,12 +7,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center">Workers</h2>
+            <h2 class="text-center">Users</h2>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <a href="/worker/new" class="btn btn-default">New</a>
+            <a href="/user/new" class="btn btn-default">New</a>
         </div>
     </div>
     <div class="row">

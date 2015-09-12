@@ -1,0 +1,32 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<KnockAPI.Models.WorkType>
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase
+@{
+    Layout = "Views/Layout/Base.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Edit Work Type</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/user/update" method="post" class="form-horizontal">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <div class="form-group">
+                      <label for="WorkNature">WorkNature</label>
+                        <input name="WorkNature" value="@Model.WorkNature" type="text" class="form-control" placeholder="WorkNature">
+                        <label for="Category">Category</label>
+                        <input name="Category" value="@Model.Category" type="text" class="form-control" placeholder="Category">
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

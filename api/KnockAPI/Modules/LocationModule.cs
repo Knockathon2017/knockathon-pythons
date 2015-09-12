@@ -38,12 +38,12 @@ namespace KnockAPI.Modules
                     http.Method = "POST";
                     ASCIIEncoding encoding = new ASCIIEncoding();
                     Byte[] bytes = encoding.GetBytes(servicekeys);
-                    Stream newStream = http.GetRequestStream();
-                    newStream.Write(bytes, 0, bytes.Length);
-                    newStream.Close();
+                    Stream reqStream = http.GetRequestStream();
+                    reqStream.Write(bytes, 0, bytes.Length);
+                    reqStream.Close();
                     var response = http.GetResponse();
-                    var stream = response.GetResponseStream();
-                    var sr = new StreamReader(stream);
+                    var resStream = response.GetResponseStream();
+                    var sr = new StreamReader(resStream);
                     var content = sr.ReadToEnd();
                     return content.ToString();
 
