@@ -29,7 +29,8 @@ namespace KnockAPI.Modules
                     {
                         ctx.Users.Add(user);
                         ctx.SaveChanges();
-                        return Response.AsRedirect("/users");
+                      //  return Response.AsRedirect("/users");
+                        return 200;
                     }
                     return 500;
                 };
@@ -52,7 +53,8 @@ namespace KnockAPI.Modules
                     {
                         ctx.SetModified(user);
                         ctx.SaveChanges();
-                        return Response.AsRedirect("/users");
+                        //return Response.AsRedirect("/users");
+                        return 200;
                     }
                     return 404;
                 };
@@ -75,7 +77,8 @@ namespace KnockAPI.Modules
                     var dbWorker = ctx.Users.Where(x => x.Id == user.Id).FirstOrDefault();
                     ctx.Users.Remove(dbWorker);
                     ctx.SaveChanges();
-                    return Response.AsRedirect("/users");
+                   // return Response.AsRedirect("/users");
+                    return 200;
                 }
                 return 404;
             };
