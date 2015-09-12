@@ -38,10 +38,10 @@ namespace KnockAPI.Modules
             Get["/user/update/{id}"] = _ =>
                 {
                     var id = (long)_.id;
-                    var user = ctx.Users.Where(x => x.Id == id).FirstOrDefault();
+                    var user = ctx.Users.Where(x => x.UserId == id).FirstOrDefault();
                     if (user != null)
                     {
-                        return View["update", new User() { Name = user.FirstName, Id = user.Id }];
+                        return View["update", new User() { Name = user.FirstName, UserId = user.UserId }];
                     }
                     return 404;
                 };
@@ -61,7 +61,7 @@ namespace KnockAPI.Modules
             Get["/user/delete/{id}"] = _ =>
                 {
                     var id = (long)_.id;
-                    if (ctx.Users.Any(x => x.Id == id))
+                    if (ctx.Users.Any(x => x.UserId == id))
                     {
                         ViewBag.WorkerId = id;
                         return View["delete"];
@@ -74,7 +74,7 @@ namespace KnockAPI.Modules
                 User user = this.Bind<User>();
                 if (user != null)
                 {
-                    var dbWorker = ctx.Users.Where(x => x.Id == user.Id).FirstOrDefault();
+                    var dbWorker = ctx.Users.Where(x => x.UserId == user.UserId).FirstOrDefault();
                     ctx.Users.Remove(dbWorker);
                     ctx.SaveChanges();
                    // return Response.AsRedirect("/users");

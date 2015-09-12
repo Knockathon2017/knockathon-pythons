@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
             <form action="/workprovider/update" method="post" class="form-horizontal">
-                <input type="hidden" name="id" value="@Model.Id" />
+                <input type="hidden" name="id" value="@Model.WorkProviderId" />
                 <div class="form-group">
                     <div class="col-md-6">
                         <label for="name">Name</label>
@@ -26,7 +26,7 @@
                             Nature of Work
                             @foreach (var item in ViewBag.WorkType)
                             {
-                                <option @(item.Id == Model.WorkTypeId ? "selected" : "") value="@item.Id">@item.WorkNature</option>
+                                <option @(item.WorkTypeId == Model.WorkTypeId ? "selected" : "") value="@item.Id">@item.WorkNature</option>
                             }
                         </select>
                     </div>

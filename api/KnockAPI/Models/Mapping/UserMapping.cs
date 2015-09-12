@@ -9,8 +9,8 @@ namespace KnockAPI.Models.Mapping
         {
             ToTable("Users");
 
-            HasKey(x => x.Id)
-                .Property(x => x.Id)
+            HasKey(x => x.UserId)
+                .Property(x => x.UserId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.FirstName)

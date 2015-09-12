@@ -9,8 +9,8 @@ namespace KnockAPI.Models.Mapping
         {
             ToTable("WorkType");
 
-            HasKey(x => x.Id)
-                .Property(x => x.Id)
+            HasKey(x => x.WorkTypeId)
+                .Property(x => x.WorkTypeId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.WorkNature)

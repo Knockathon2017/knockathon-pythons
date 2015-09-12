@@ -37,10 +37,10 @@ namespace KnockAPI.Modules
             Get["/worktype/update/{id}"] = _ =>
                 {
                     var id = (long)_.id;
-                    var worktype = ctx.WorkType.Where(x => x.Id == id).FirstOrDefault();
+                    var worktype = ctx.WorkType.Where(x => x.WorkTypeId == id).FirstOrDefault();
                     if(worktype != null)
                     {
-                        return View["update", new WorkType() { WorkNature = worktype.WorkNature, Id = worktype.Id}];
+                        return View["update", new WorkType() { WorkNature = worktype.WorkNature, WorkTypeId = worktype.WorkTypeId}];
                     }
                     return 404;
                 };
@@ -59,7 +59,7 @@ namespace KnockAPI.Modules
             Get["/worktype/delete/{id}"] = _ =>
                 {
                     var id = (long)_.id;
-                    if (ctx.WorkType.Any(x => x.Id == id))
+                    if (ctx.WorkType.Any(x => x.WorkTypeId == id))
                     {
                         ViewBag.WorkerId = id;
                         return View["delete"];
@@ -72,7 +72,7 @@ namespace KnockAPI.Modules
                 WorkType worktype = this.Bind<WorkType>();
                 if (worktype != null)
                 {
-                    var dbWorker = ctx.WorkType.Where(x => x.Id == worktype.Id).FirstOrDefault();
+                    var dbWorker = ctx.WorkType.Where(x => x.WorkTypeId == worktype.WorkTypeId).FirstOrDefault();
                     ctx.WorkType.Remove(dbWorker);
                     ctx.SaveChanges();
                     return Response.AsRedirect("/worktype");

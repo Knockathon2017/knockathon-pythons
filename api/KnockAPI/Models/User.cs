@@ -3,7 +3,7 @@ namespace KnockAPI.Models
 {
     public class User : Base
     {
-        public long Id { get; set; }
+        public long UserId { get; set; }
         public string Name { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -13,7 +13,8 @@ namespace KnockAPI.Modules
             Get["/workers"] = _ =>
                 {
                     var workers = ctx.Workers.ToList();
-                    return View["index", workers];
+                    return Response.AsJson(workers);
+                    //return View["index", workers];
                 };
 
             Get["/worker/new"] = _ =>
@@ -37,10 +38,10 @@ namespace KnockAPI.Modules
             Get["/worker/update/{id}"] = _ =>
                 {
                     var id = (long)_.id;
-                    var worker = ctx.Workers.Where(x => x.Id == id).FirstOrDefault();
+                    var worker = ctx.Workers.Where(x => x.WorkerId == id).FirstOrDefault();
                     if(worker != null)
                     {
-                        return View["update", new Worker() { Name = worker.Name, Id = worker.Id}];
+                        return View["update", new Worker() { Name = worker.Name, WorkerId = worker.WorkerId}];
                     }
                     return 404;
                 };
@@ -59,7 +60,7 @@ namespace KnockAPI.Modules
             Get["/worker/delete/{id}"] = _ =>
                 {
                     var id = (long)_.id;
-                    if (ctx.Workers.Any(x => x.Id == id))
+                    if (ctx.Workers.Any(x => x.WorkerId == id))
                     {
                         ViewBag.WorkerId = id;
                         return View["delete"];
@@ -72,7 +73,7 @@ namespace KnockAPI.Modules
                 Worker worker = this.Bind<Worker>();
                 if (worker != null)
                 {
-                    var dbWorker = ctx.Workers.Where(x => x.Id == worker.Id).FirstOrDefault();
+                    var dbWorker = ctx.Workers.Where(x => x.WorkerId == worker.WorkerId).FirstOrDefault();
                     ctx.Workers.Remove(dbWorker);
                     ctx.SaveChanges();
                     return Response.AsRedirect("/workers");

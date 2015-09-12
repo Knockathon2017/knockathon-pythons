@@ -36,10 +36,10 @@ namespace KnockAPI.Modules
             Get["/workprovider/update/{id}"] = _ =>
                 {
                     var id = (long)_.id;
-                    var workprovider = ctx.WorkProviders.Where(x => x.Id == id).FirstOrDefault();
+                    var workprovider = ctx.WorkProviders.Where(x => x.WorkProviderId == id).FirstOrDefault();
                     if (workprovider != null)
                     {
-                        return View["update", new WorkProvider() { Id = workprovider.Id, Name = workprovider.Name}];
+                        return View["update", new WorkProvider() { WorkProviderId = workprovider.WorkProviderId, Name = workprovider.Name}];
                     }
                     return 404;
                 };
@@ -60,7 +60,7 @@ namespace KnockAPI.Modules
             Get["/workprovider/delete/{id}"] = _ =>
             {
                 var id = (long)_.id;
-                if (ctx.WorkProviders.Any(x => x.Id == id))
+                if (ctx.WorkProviders.Any(x => x.WorkProviderId == id))
                 {
                     ViewBag.WorkProviderId = id;
                     return View["delete"];
@@ -73,7 +73,7 @@ namespace KnockAPI.Modules
                 WorkProvider workprovider = this.Bind<WorkProvider>();
                 if (workprovider != null)
                 {
-                    var dbWorker = ctx.WorkProviders.Where(x => x.Id == workprovider.Id).FirstOrDefault();
+                    var dbWorker = ctx.WorkProviders.Where(x => x.WorkProviderId == workprovider.WorkProviderId).FirstOrDefault();
                     ctx.WorkProviders.Remove(dbWorker);
                     ctx.SaveChanges();
                     return Response.AsRedirect("/workproviders");
