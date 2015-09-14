@@ -36,7 +36,7 @@ public class JobProviderAdapter extends ArrayAdapter<JobSeeker> {
             TextView workProviderLocationView = (TextView) rowView.findViewById(R.id.workProviderLocationView);
             TextView workProviderContactView = (TextView) rowView.findViewById(R.id.workProviderContactView);
 
-            workProviderNameView.setText(_jobSeekers.get(position).name + " , Age " + _jobSeekers.get(position).age + " , Work Force Required " + _jobSeekers.get(position).workForce);
+            workProviderNameView.setText(_jobSeekers.get(position).name + " , Contact : " + _jobSeekers.get(position).phone + " , Age : " + _jobSeekers.get(position).age + " , Work Force Required : " + _jobSeekers.get(position).workForce);
             workProviderLocationView.setText(_jobSeekers.get(position).location);
             workProviderContactView.setText(_jobSeekers.get(position).phone);
 

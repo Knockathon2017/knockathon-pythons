@@ -1,7 +1,10 @@
 package com.land.farm.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -24,10 +27,21 @@ public class HomeActivity extends Activity {
     private ListView _weatherListView;
     private TextView _loaderView;
 
+    private SensorManager senseManage;
+    private Sensor envSense;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        senseManage = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        envSense = senseManage.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY);
+
+//        if (envSense == null)
+//            Toast.makeText(this.getApplicationContext(),
+//                    "Sorry - your device doesn't have an pressure sensor!",
+//                    Toast.LENGTH_SHORT).show();
 
         _tickerListView = (ListView) this.findViewById(R.id.tickerListView);
         _loaderView = (TextView) this.findViewById(R.id.homeLoaderView);

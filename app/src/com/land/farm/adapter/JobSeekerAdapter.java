@@ -40,8 +40,8 @@ public class JobSeekerAdapter extends ArrayAdapter<JobProvider> {
             if (_jobProvider.get(position).isAvailable == "true") {
                 online = "Yes";
             }
-            workProviderNameView.setText(_jobProvider.get(position).name + " , Age " + _jobProvider.get(position).age + " , Sex " + _jobProvider.get(position).sex + " , Is Available : " + online);
-            workProviderContact.setText(_jobProvider.get(position).phone);
+            workProviderNameView.setText(_jobProvider.get(position).name + " , Age : " + _jobProvider.get(position).age + " , Sex : " + _jobProvider.get(position).sex + " , Is Available : " + online);
+            workProviderContact.setText("Contact No : " + _jobProvider.get(position).phone);
 
         }
 

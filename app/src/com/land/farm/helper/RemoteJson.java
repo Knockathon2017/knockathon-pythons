@@ -3,6 +3,7 @@ package com.land.farm.helper;
 
 import android.content.Context;
 import android.widget.ListView;
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -10,6 +11,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.land.farm.interfaces.JsonCallback;
 import com.land.farm.interfaces.WorkProviderCallBack;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class RemoteJson {
@@ -70,7 +74,18 @@ public class RemoteJson {
                 // something went wrong
             }
 
-        });
+        }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Content-Type", "application/json");
+                return params;
+            }
+
+
+        };
 
         // Add the request to the queue
         Volley.newRequestQueue(_context).add(request);
