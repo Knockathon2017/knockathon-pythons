@@ -12,7 +12,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <a href="/worker/new" class="btn btn-default">New</a>
+            <a href="/warehouse/new" class="btn btn-default">New</a>
         </div>
     </div>
     <div class="row">
@@ -42,10 +42,10 @@
                             <td class="col-md-8">@item.Capacity</td>
                             <td class="col-md-8">@item.Occupied</td>
                             <td class="col-md-8">@item.Free</td>
-                            <td class="col-md-2">@item.CreatedAt</td>
+                            <td class="col-md-2">@item.ModifiedAt</td>
                             <td class="col-md-8">
-                                <a href="/worker/update/@item.WarehouseId" class="btn btn-xs btn-primary">Edit</a>
-                                <a href="/worker/delete/@item.WarehouseId" data-method="delete" class="btn btn-xs btn-danger">Delete</a>
+                                <a href="/warehouse/update/@item.WarehouseId" class="btn btn-xs btn-primary">Edit</a>
+                                <a href="/warehouse/delete/@item.WarehouseId" data-method="delete" class="btn btn-xs btn-danger">Delete</a>
                             </td>
                         </tr>
                     }

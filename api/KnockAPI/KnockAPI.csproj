@@ -135,6 +135,9 @@
     <Content Include="Views\WorkType\new.cshtml" />
     <Content Include="Views\WorkType\update.cshtml" />
     <Content Include="Views\Warehouse\List`1.cshtml" />
+    <Content Include="Views\Warehouse\new.cshtml" />
+    <Content Include="Views\Warehouse\update.cshtml" />
+    <Content Include="Views\Warehouse\delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

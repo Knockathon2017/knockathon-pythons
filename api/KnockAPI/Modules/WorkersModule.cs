@@ -13,11 +13,9 @@ namespace KnockAPI.Modules
             Get["/workers"] = _ =>
                 {
                     var workers = ctx.Workers.ToList();
-                   //return workers;
-                   return Response.AsJson(workers);
+                   return workers;
+                  // return Response.AsJson(workers);
 
-
-                     
                 };
 
             Get["/worker/new"] = _ =>
