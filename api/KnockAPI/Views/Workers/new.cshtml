@@ -4,7 +4,6 @@
     Layout = "Views/Layout/Base.cshtml";
 }
 
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -16,10 +15,28 @@
             <form action="/worker/new" method="post" class="form-horizontal">
                 <div class="form-group">
                     <div class="col-md-6">
-                        <label for="FirstName">First Name</label>
-                        <input name="FirstName" value="@Model.FirstName" type="text" class="form-control" placeholder="User First Name">
+
+                        <label for="FirstName">Worker First Name</label>
+                        <input name="FirstName" value="@Model.FirstName" type="text" class="form-control" placeholder="Worker First Name">
                         <label for="LastName">Last Name</label>
-                        <input name="LastName" value="@Model.LastName" type="text" class="form-control" placeholder="User Last Name">
+                        <input name="LastName" value="@Model.LastName" type="text" class="form-control" placeholder="Worker Last Name">
+                        <label for="Age">Age</label>
+                        <input name="Age" value="@Model.Age" type="number" class="form-control" placeholder="Age">
+                        <label for="Sex">Sex</label>
+                        <input name="Sex" value="@Model.Sex" type="text" class="form-control" placeholder="Sex">
+                        
+                        <label for="Location">Location</label>
+                        <input name="Location" value="@Model.LocationKey" type="text" class="form-control" placeholder="Location">
+                        <label for="Contact1">Contact1</label>
+                        <input name="Contact1" value="@Model.ContactNo1" type="text" class="form-control" placeholder="Contact1">
+
+                        <label for="Contact2">Contact2</label>
+                        <input name="Contact2" value="@Model.ContactNo2" type="text" class="form-control" placeholder="Contact2">
+
+                        <label for="Availability">Availability</label>
+                        <input name="Availability" value="@Model.IsAvailable" class="form-control" placeholder="Availability">
+
+                    
                     </div>
                 </div>
                 <div class="form-group">
@@ -27,7 +44,7 @@
                         <button class="btn btn-primary">Save</button>
                     </div>
                 </div>
-                
+
             </form>
         </div>
     </div>

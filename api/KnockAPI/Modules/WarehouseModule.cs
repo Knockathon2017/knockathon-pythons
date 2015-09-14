@@ -40,7 +40,7 @@ namespace KnockAPI.Modules
                 var warehouse = ctx.Warehouses.Where(x => x.WarehouseId == id).FirstOrDefault();
                 if (warehouse != null)
                 {
-                    return View["update", new Warehouse() { Name = warehouse.Name, WarehouseId = warehouse.WarehouseId }];
+                    return View["update", warehouse];
                 }
                 return 404;
             };
@@ -61,7 +61,7 @@ namespace KnockAPI.Modules
                 var id = (long)_.id;
                 if (ctx.Warehouses.Any(x => x.WarehouseId == id))
                 {
-                    ViewBag.WorkerId = id;
+                    ViewBag.WarehouseId = id;
                     return View["delete"];
                 }
                 return 404;

@@ -23,6 +23,7 @@
                         <th class="col-md-8">Worker Name</th>
                         <th class="col-md-8">Age</th>
                         <th class="col-md-8">Sex</th>
+                        <th class="col-md-8">Available</th>
                         <th class="col-md-8">Location</th>
                         <th class="col-md-8">Contact1</th>
                         <th class="col-md-8">Contact2</th>
@@ -37,6 +38,7 @@
                             <td class="col-md-8">@item.FirstName @item.LastName</td>
                             <td class="col-md-8">@item.Age</td>
                             <td class="col-md-8">@item.Sex</td>
+                            <td class="col-md-8">@(item.IsAvailable? "Yes": "No")</td>
                             <td class="col-md-8">@item.LocationKey</td>
                             <td class="col-md-8">@item.ContactNo1</td>
                             <td class="col-md-8">@item.ContactNo2</td>
